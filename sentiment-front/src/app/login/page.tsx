@@ -18,10 +18,10 @@ const LoginPage: React.FC = () => {
     setIsLoading(true); // Début du chargement
 
     try {
-      const response = await axios.post<{ access_token: string }>(
+        const response = await axios.post(
         "http://localhost:8000/login",
-        { username, password }
-      );
+         {username,password,},
+         {headers: { "Content-Type": "application/json" }});
 
       localStorage.setItem("token", response.data.access_token);
       router.push("/sentiment");
@@ -53,7 +53,7 @@ const LoginPage: React.FC = () => {
           
           {/* Champ Nom d'utilisateur */}
           <div>
-            <label htmlFor="username" className="sr-only">
+            <label htmlFor="username" className="sr-only ">
               Nom d'utilisateur
             </label>
             <div className="relative">
@@ -62,7 +62,7 @@ const LoginPage: React.FC = () => {
               </div>
               <input
                 id="username"
-                className="block w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out"
+                className="block w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:ring-2 focus:ring-indigo-800 focus:border-indigo-500 transition duration-150 ease-in-out text-gray-900"
                 placeholder="Nom d'utilisateur"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -82,7 +82,7 @@ const LoginPage: React.FC = () => {
               </div>
               <input
                 id="password"
-                className="block w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out"
+                className="block w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out text-gray-900"
                 type="password"
                 placeholder="Mot de passe"
                 value={password}
@@ -94,11 +94,11 @@ const LoginPage: React.FC = () => {
 
           {/* Bouton de Connexion */}
           <button
-            className={`w-full flex justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white transition duration-150 ease-in-out 
-              ${isLoading 
-                ? 'bg-indigo-400 cursor-not-allowed' 
-                : 'bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-              }`}
+           className={`w-full flex justify-center items-center px-4 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white transition duration-150 ease-in-out 
+            ${isLoading 
+              ? 'bg-orange-400 cursor-not-allowed' // Couleur plus claire pour l'état de chargement
+              : 'bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500' // Couleur principale
+            }`}
             type="submit"
             disabled={isLoading}
           >
