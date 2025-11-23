@@ -54,7 +54,20 @@ export default function SentimentPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div
+  className="min-h-screen flex items-center justify-center p-4"
+  style={{
+    backgroundColor: "#fff7f0",
+    backgroundImage: `
+      radial-gradient(circle at 20% 20%, rgba(255,150,70,0.25) 2px, transparent 2px),
+      radial-gradient(circle at 80% 40%, rgba(255,150,70,0.3) 2px, transparent 2px),
+      radial-gradient(circle at 40% 70%, rgba(255,150,70,0.2) 3px, transparent 3px),
+      repeating-linear-gradient(45deg, transparent 0 10px, rgba(255,180,120,0.1) 10px 20px)
+    `,
+    backgroundSize: "180px 180px, 220px 220px, 260px 260px, 100% 100%",
+    backgroundAttachment: "fixed",
+  }}
+> 
       <div className="bg-white p-10 rounded-2xl shadow-xl w-full max-w-xl">
 
         <h1 className="text-3xl font-extrabold text-center mb-2 text-gray-700">

@@ -34,9 +34,7 @@ const LoginPage: React.FC = () => {
 
   return (
     // Conteneur principal: Centré, fond gris clair
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-      
-      {/* Carte du formulaire: max-w, ombre avancée, coins larges, fond blanc */}
+<div className="min-h-screen flex items-center justify-center bg-gray-100">     {/* Carte du formulaire: max-w, ombre avancée, coins larges, fond blanc */}
       <div className="w-full max-w-sm bg-white p-8 md:p-10 rounded-xl shadow-2xl transition-all hover:shadow-3xl">
         
         {/* En-tête du formulaire */}
